@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { Book } from '../models/bookModel';
 
+// Funciom para obtener todos los libros
 const getAllBooks = async (req: Request, res: Response) => {
   try {
     const books = await Book.find();
@@ -10,6 +11,7 @@ const getAllBooks = async (req: Request, res: Response) => {
   }
 };
 
+// Función para obtener libro ID 
 const getBookById = async (req: Request, res: Response) => {
   try {
     const book = await Book.findById(req.params.id);
@@ -21,6 +23,7 @@ const getBookById = async (req: Request, res: Response) => {
   }
 };
 
+// Funcion para crear libro
 const createBook = async (req: Request, res: Response) => {
   try {
     const book = new Book(req.body);
@@ -31,6 +34,7 @@ const createBook = async (req: Request, res: Response) => {
   }
 };
 
+// Funcion para actualizar libro
 const updateBook = async (req: Request, res: Response) => {
   try {
     const book = await Book.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -42,6 +46,7 @@ const updateBook = async (req: Request, res: Response) => {
   }
 };
 
+// Funcion para eliminar libro
 const deleteBook = async (req: Request, res: Response) => {
   try {
     const book = await Book.findByIdAndDelete(req.params.id);
