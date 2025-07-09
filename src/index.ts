@@ -1,6 +1,8 @@
 import express from 'express';
-import { connectDB } from './config/db';
-import bookRoutes from "./routes/bookRoutes";
+import { connectDB } from './config/db.js';
+import bookRoutes from './routes/bookRoutes.js';
+
+await process.loadEnvFile('.env');
 
 const app = express();
 app.use(express.json());
