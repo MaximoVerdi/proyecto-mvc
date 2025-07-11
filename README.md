@@ -135,6 +135,5 @@ curl http://localhost:3000/api/books
 
 ## 📌 Autor
 
-- Nombre: _[Tu Nombre]_
-- Curso: _[Nombre del curso o materia]_
+- Nombre: _Maximo Verdi_
 - Año: 2025
